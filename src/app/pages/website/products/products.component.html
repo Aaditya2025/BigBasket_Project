@@ -1,0 +1,35 @@
+<!-- Hero Banner -->
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <img src="https://i.pinimg.com/originals/00/6c/ee/006cee5bcbaf15be3e49d3650030dcc8.png" 
+           alt="BigBasket Banner" 
+           class="banner-img img-fluid rounded shadow">
+    </div>
+  </div>
+</div>
+
+<!-- Popular Products -->
+<div class="container mt-5 popular-products">
+  <h3 class="mb-4 fw-bold">Popular Products</h3>
+  <div class="row g-3">
+    <div class="col-6 col-md-3" *ngFor="let product of productList">
+      <div class="product-card h-100">
+        <div class="product-img-wrapper">
+          <img [src]="product.productImageUrl" alt="{{product.productShortName}}">
+        </div>
+        <div class="p-2">
+          <h6 class="product-title">{{product.productShortName}}</h6>
+          <p class="product-price">₹{{product.productPrice}}</p>
+          <button class="btn btn-success btn-sm w-100">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-light p-4 mt-5 text-center">
+  &copy; 2025 BigBasket Clone. All rights reserved.
+</footer>
+

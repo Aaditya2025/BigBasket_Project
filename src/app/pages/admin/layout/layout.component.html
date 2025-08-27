@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-sm" style="background-color: #2e7d32; padding: 2rem 1.5rem;">
+  <div class="container-fluid">
+
+    <!-- Logo -->
+    <a class="navbar-brand text-white fw-bold fs-2" routerLink="/shop">bigbasket</a>
+
+    <!-- Right Menu -->
+    <ul class="navbar-nav ms-auto d-flex align-items-center">
+
+      <!-- Categories -->
+      <li class="nav-item">
+        <a class="nav-link text-white d-flex align-items-center" routerLink="/category">
+          <span class="material-icons me-1">category</span> Categories
+        </a>
+      </li>
+
+
+      <!-- Profile -->
+      <li class="nav-item ms-3">
+        <a class="nav-link text-white d-flex align-items-center" routerLink="/profile">
+          <span class="material-icons me-1">person</span> Profile
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>

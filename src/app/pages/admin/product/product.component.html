@@ -1,0 +1,87 @@
+<div class="row mt-3">
+  <!-- Product List -->
+  <div [ngClass]="isNewBtnClicked ? 'col-8' : 'col-12'">
+    <div class="card shadow-sm rounded-3">
+      <div class="card-header text-white d-flex justify-content-between align-items-center" style="background-color: #2e7d32;">
+        <h5 class="mb-0">Product List</h5>
+        <button class="btn btn-sm btn-light text-success fw-bold" (click)="openNewProductPanel()">
+          + New
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="row g-4">
+          <div class="col-md-3" *ngFor="let product of productsList">
+            <div class="card product-card h-100 shadow-sm border-0">
+              <img class="card-img-top product-img" [src]="product.productImageUrl" alt="Product image">
+              <div class="card-body text-center">
+                <h6 class="card-title mb-1">{{product.productName}}</h6>
+                <p class="text-muted small">{{product.categoryName}}</p>
+                <div class="d-flex justify-content-center gap-2 mt-2">
+                  <button class="btn btn-outline-success btn-sm" (click)="onEdit(product)">Edit</button>
+                  <button class="btn btn-outline-danger btn-sm" (click)="onDelete(product)">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Product Form -->
+  <div class="col-4" *ngIf="isNewBtnClicked">
+    <div class="card shadow-sm rounded-3 border-0">
+      <div class="card-header text-white d-flex justify-content-between align-items-center" style="background-color: #2e7d32;">
+        <h5 class="mb-0">New Product</h5>
+        <button class="btn btn-sm btn-light text-success fw-bold" (click)="closeNewProductPanel()">✕ Close</button>
+      </div>
+      <div class="card-body">
+        <form class="row g-3">
+          <div class="col-6">
+            <label class="form-label">SKU</label>
+            <input type="text" [(ngModel)]="productObj.productSku" class="form-control">
+          </div>
+          <div class="col-6">
+            <label class="form-label">Name</label>
+            <input type="text" [(ngModel)]="productObj.productName" class="form-control">
+          </div>
+          <div class="col-6">
+            <label class="form-label">Short Name</label>
+            <input type="text" [(ngModel)]="productObj.productShortName" class="form-control">
+          </div>
+          <div class="col-6">
+            <label class="form-label">Price</label>
+            <input type="text" [(ngModel)]="productObj.productPrice" class="form-control">
+          </div>
+          <div class="col-6">
+            <label class="form-label">Category</label>
+            <select [(ngModel)]="productObj.categoryId" class="form-select">
+              <option *ngFor="let category of categoryList" [value]="category.categoryId">
+                {{category.categoryName}}
+              </option>
+            </select>
+          </div>
+          <div class="col-6">
+            <label class="form-label">Delivery Time</label>
+            <input type="text" [(ngModel)]="productObj.deliveryTimeSpan" class="form-control">
+          </div>
+          <div class="col-12">
+            <label class="form-label">Image URL</label>
+            <input type="text" [(ngModel)]="productObj.productImageUrl" class="form-control">
+          </div>
+          <div class="col-12">
+            <label class="form-label">Description</label>
+            <textarea [(ngModel)]="productObj.productDescription" class="form-control"></textarea>
+          </div>
+          <div class="col-6">
+            <button type="reset" class="btn btn-outline-secondary w-100">Reset</button>
+          </div>
+          <div class="col-6">
+            <button *ngIf="productObj.productId == 0" class="btn btn-success w-100" (click)="onSave()">Create</button>
+            <button *ngIf="productObj.productId !== 0" class="btn btn-success w-100" (click)="onUpdate()">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

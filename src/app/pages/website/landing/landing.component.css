@@ -1,0 +1,88 @@
+.navbar-brand img {
+  max-height: 40px;
+}
+
+.nav-link {
+  font-weight: 500;
+}
+
+.bg-success .nav-link:hover {
+  text-decoration: underline;
+}
+
+.material-icons {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+
+.card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.banner-img {
+  height: 60vh; /* Half of the screen height */
+  object-fit: cover; /* Crop while maintaining aspect ratio */
+  width: 100%;
+}
+
+
+
+.popular-products {
+  font-family: Arial, sans-serif;
+}
+
+.product-card {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+.product-img-wrapper {
+  width: 100%;
+  height: 180px;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-img-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.product-title {
+  font-size: 14px;
+  margin: 0;
+  height: 38px;
+  overflow: hidden;
+}
+
+.product-price {
+  color: #388e3c;
+  font-weight: bold;
+  margin: 5px 0;
+}

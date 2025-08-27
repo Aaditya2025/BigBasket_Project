@@ -1,0 +1,63 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success p-3">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold fs-3 text-white" routerLink="/">bigbasket</a>
+
+    <!-- Search Bar -->
+    <form class="d-flex mx-auto w-50">
+      <input class="form-control me-2" type="search" placeholder="Search for products..." aria-label="Search">
+      <button class="btn btn-light" type="submit">
+        <span class="material-icons text-success">search</span>
+      </button>
+    </form>
+
+    <!-- Right Side Links -->
+    <div class="d-flex align-items-center gap-4">
+
+      <!-- Categories Dropdown -->
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white d-flex align-items-center" href="#" id="categoriesDropdown"
+          role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Categories
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="categoriesDropdown">
+          <li *ngFor="let category of cataegoryList">
+            <a class="dropdown-item" (click)="navigateToProducts(category.categoryId)">
+              {{ category.categoryName }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+      <!-- <div class="col-6">
+        <label for="">Category</label>
+        <select [(ngModel)]="productObj.categoryId" class="form-select" >
+            <option *ngFor="let category of cataegoryList" [value]="category.categoryId">
+                {{category.categoryName}}
+            </option>
+        </select>
+    </div>
+       -->
+
+
+      <!-- Cart Link -->
+      <a class="nav-link text-white d-flex align-items-center" routerLink="/cart">
+        <span class="material-icons me-1">shopping_cart</span> Cart
+      </a>
+
+      <a class="nav-link text-white d-flex align-items-center" routerLink="/product">
+        <span class="material-icons me-1">add_circle</span> Add Product
+      </a>
+
+
+      <!-- Profile Link -->
+      <a class="nav-link text-white d-flex align-items-center" routerLink="/profile">
+        <span class="material-icons me-1">person</span> Profile
+      </a>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
